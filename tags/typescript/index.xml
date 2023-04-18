@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>typescript on Shiba codes</title>
+    <link>https://mantassidabras.github.io/minimaldev/tags/typescript/</link>
+    <description>Recent content in typescript on Shiba codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>{year}</copyright>
+    <lastBuildDate>Sun, 16 Apr 2023 22:20:07 +0300</lastBuildDate><atom:link href="https://mantassidabras.github.io/minimaldev/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Type driven design using Typescript</title>
+      <link>https://mantassidabras.github.io/minimaldev/posts/monkey/monkey/</link>
+      <pubDate>Sun, 16 Apr 2023 22:20:07 +0300</pubDate>
+      
+      <guid>https://mantassidabras.github.io/minimaldev/posts/monkey/monkey/</guid>
+      <description>When we work in a typed language, we heavily rely on built in primitives. After all these are the building blocks of our code.</description>
+    </item>
+    
+  </channel>
+</rss>

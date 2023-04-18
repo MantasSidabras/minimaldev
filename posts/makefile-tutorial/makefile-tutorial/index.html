@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-us" class="scroll-smooth">
+    <head><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makefile tutorial</title>
+<meta name="description" content="Automation files for building/compiling/testing. Originaly made for compiling c/c&#43;&#43;. Read more..
+target: prerequisites recipe target - filename that is generated(might not run if file exists) or just a function name (PHONY targets) prequisites - something that is needed for the recipe to work recipe - actions .">
+<link rel="canonical" href="https://mantassidabras.github.io/minimaldev/posts/makefile-tutorial/makefile-tutorial/">
+<link rel="robots" href="/robots.txt" />
+
+
+<link rel="stylesheet" href="https://mantassidabras.github.io/minimaldev/css/main.min.8bca9eaf79a377fc1076799bef73f85e7729a68b881550c4c7efcf5ca712b392.css" integrity="sha256-i8qer3mjd/wQdnmb73P4XncppouIFVDEx+/PXKcSs5I=">
+</head>
+    <body class="max-w-screen-md px-10 mx-auto"><header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
+    
+
+<figure class="flex-none w-20 h-20 rounded-full overflow-hidden" ><a href="https://mantassidabras.github.io/minimaldev/"><img srcset="/minimaldev/img/shiba-avatar_hu2ed3912cb111aae3d22e68d32013bd96_1264929_80x80_fill_q90_box_smart1_3.png 80w" src="/minimaldev/img/shiba-avatar.png" width="1024" height="1024" alt="Shiba codes"></a></figure>
+
+    <div class="flex flex-col gap-5">
+    <a href="https://mantassidabras.github.io/minimaldev/">
+    
+    <h3 class="text-center sm:text-left text-4xl font-extrabold text-gray-800 ">Shiba codes</h3>
+    
+</a>
+    <nav>
+    <ul class="flex flex-wrap justify-center uppercase text-xs font-semibold gap-7 text-gray-500 ">
+        
+        
+        <li class="hover:text-gray-500"><a href="/minimaldev/">Home</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/minimaldev/posts">Posts</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/minimaldev/categories">Categories</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/minimaldev/tags">Tags</a></li>
+        
+        <li class="hover:text-gray-500"><a href="/minimaldev/about">About me</a></li>
+        
+    </ul>
+</nav>
+    </div>
+</header><div id="content">
+<article class="flex flex-col gap-10">
+    <header class="flex flex-col gap-2">
+        <h2 class="text-4xl leading-snug font-bold text-gray-900">Makefile tutorial</h2>
+
+        <div class="text-sm font-semibold text-gray-500 flex gap-3">
+        
+<time datetime="2023-04-18 17:45:56 &#43;0300 EEST" title="2023-04-18 17:45:56 &#43;0300 EEST">
+    18 April 2023
+</time>
+        
+        —
+        
+            <a class="hover:text-gray-500" href="/minimaldev/categories/uncategories/" alt="Uncategories" >
+                Uncategories
+                </a>
+        
+
+        </div>
+    </header>
+    <section class="content text-lg text-gray-800">
+    <p>Automation files for building/compiling/testing. Originaly made for compiling c/c++. <a href="https://makefiletutorial.com/">Read more..</a></p>
+<pre tabindex="0"><code>target: prerequisites
+	recipe
+</code></pre><ul>
+<li>target - filename that is generated(might not run if file exists) or just a function name (PHONY targets)</li>
+<li>prequisites - something that is needed for the recipe to work</li>
+<li>recipe - actions</li>
+<li><code>.PHONY: (name1) (name2) (nameN)</code> -  makes recipe not check if file with that name is created and execute command again.</li>
+<li><code>.DEFAULT_GOAL := (name)</code> - set default function to be called</li>
+<li>add &ldquo;@&rdquo; before recipe command not to print them.</li>
+<li><code>a = abc</code> - define value</li>
+<li><code>$@</code> - contains target name</li>
+<li><code>$(wildcard *.o)</code> wildcard matches all .o files</li>
+<li><code>export varbialeName</code> will make it visible in shell</li>
+<li>has if, functions, foreach if really needed</li>
+<li>can include other makefiles <code>include filenames...</code></li>
+</ul>
+<h4 id="example">Example</h4>
+<div class="highlight"><pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>.PHONY: all say_hello generate clean
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">entity</span> <span style="color:#56b6c2">=</span> Dragon
+</span></span><span style="display:flex;"><span>.DEFAULT_GOAL :<span style="color:#56b6c2">=</span> say_hello
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>say_hello:
+</span></span><span style="display:flex;"><span>@echo <span style="color:#98c379">&#34;Hello </span><span style="color:#98c379">${</span><span style="color:#e06c75">entity</span><span style="color:#98c379">}</span><span style="color:#98c379">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>generate:
+</span></span><span style="display:flex;"><span>@echo <span style="color:#98c379">&#34;Creating empty text files...&#34;</span>
+</span></span><span style="display:flex;"><span>touch file-<span style="color:#56b6c2">{</span>1..10<span style="color:#56b6c2">}</span>.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>clean:
+</span></span><span style="display:flex;"><span>@echo <span style="color:#98c379">&#34;Cleaning up...&#34;</span>
+</span></span><span style="display:flex;"><span>rm *.txt
+</span></span></code></pre></div><p>Caveats:</p>
+<ul>
+<li>Is whitespace sensitive. Do not leave gaps after variables</li>
+<li>checks file updates by timestamps</li>
+<li>each command is run in a separate shell</li>
+<li>If you want a string to have dollar sign use <code>$$</code></li>
+</ul>
+
+    </section>
+    <footer>
+        
+    </footer>
+</article>
+
+
+
+        </div><footer class="pt-5 pb-10 grid gap-3 sm:grid-cols-2">
+    <div class="text-xs font-semibold text-gray-500 order-2 sm:order-1 ">
+    © 2023 — <a class="hover:text-gray-500" href="https://mantassidabras.github.io/minimaldev/">Shiba codes</a> <span class=" font-normal ">with</span> <a class="hover:text-gray-500" href="https://github.com/nixentric/Lowkey-Hugo-Theme" target="_blank" rel="noopener noreferrer">Lowkey</a>
+</div>
+    <div class="text-xs font-semibold text-gray-500 order-1 sm:order-2">
+    <ul class="flex sm:justify-end gap-5">
+    <li><a class="hover:text-gray-500" href="https://github.com/MantasSidabras" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+</div>
+</footer></body>
+</html>

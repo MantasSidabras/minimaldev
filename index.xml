@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>{year}</copyright>
-    <lastBuildDate>Sat, 15 Apr 2023 13:07:29 +0300</lastBuildDate><atom:link href="https://mantassidabras.github.io/minimaldev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Apr 2023 17:45:56 +0300</lastBuildDate><atom:link href="https://mantassidabras.github.io/minimaldev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Makefile tutorial</title>
+      <link>https://mantassidabras.github.io/minimaldev/posts/makefile-tutorial/makefile-tutorial/</link>
+      <pubDate>Tue, 18 Apr 2023 17:45:56 +0300</pubDate>
+      
+      <guid>https://mantassidabras.github.io/minimaldev/posts/makefile-tutorial/makefile-tutorial/</guid>
+      <description>Automation files for building/compiling/testing. Originaly made for compiling c/c++. Read more..
+target: prerequisites recipe target - filename that is generated(might not run if file exists) or just a function name (PHONY targets) prequisites - something that is needed for the recipe to work recipe - actions .</description>
+    </item>
+    
     <item>
       <title>My-First-Post</title>
       <link>https://mantassidabras.github.io/minimaldev/posts/my-first-post/</link>
@@ -19,11 +29,11 @@ The quick brown fox jumps over the lazy dog</description>
     </item>
     
     <item>
-      <title>Advanced architecture</title>
-      <link>https://mantassidabras.github.io/minimaldev/posts/advanced-architecture/advanced-architecture/</link>
+      <title>Experiment with stuff</title>
+      <link>https://mantassidabras.github.io/minimaldev/posts/experiment-with-stuff/experiment-with-stuff/</link>
       <pubDate>Sat, 15 Apr 2023 09:16:45 +0000</pubDate>
       
-      <guid>https://mantassidabras.github.io/minimaldev/posts/advanced-architecture/advanced-architecture/</guid>
+      <guid>https://mantassidabras.github.io/minimaldev/posts/experiment-with-stuff/experiment-with-stuff/</guid>
       <description>This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for basic syntax and extended syntax.</description>
     </item>
     
